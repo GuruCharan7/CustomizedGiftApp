@@ -60,7 +60,7 @@ public class AuthenticationServiceImpl implements AuthenticationService{
         saveUserToken(accessToken, user);
         return BasicResponse.<LoginResponse>builder()
                 .message("User logged in successfully.")
-                .data(LoginResponse.builder().accessToken(accessToken).build())
+                .data(LoginResponse.builder().accessToken(accessToken).id(user.getId()).role(user.getRole()).build())
                 .build();
     }
 
@@ -93,5 +93,6 @@ public class AuthenticationServiceImpl implements AuthenticationService{
         user.setPassword(passwordEncoder.encode(forgotPasswordRequest.getNewPassword()));
         userRepository.save(user);
         return BasicResponse.<String>builder().message("Password updated successfully.").data("").build();
+        // Optional.ofNullable(address).ifPresentOrElse(user.setAddress(null), );;
     }
 }

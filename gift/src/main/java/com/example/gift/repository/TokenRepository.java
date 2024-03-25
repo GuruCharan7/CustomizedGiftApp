@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.gift.model.Token;
 
 public interface TokenRepository extends JpaRepository<Token, String>{
-    List<Token> findAllByUser_IdAndRevokedFalseAndExpiredFalse(String id);
+    List<Token> findAllByUser_IdAndRevokedFalseAndExpiredFalse(Long id);
 
     Optional<Token> findByToken(String token);
 }

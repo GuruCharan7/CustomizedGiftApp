@@ -11,10 +11,12 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "payment")
 public class Payment {
@@ -27,5 +29,5 @@ public class Payment {
     private Date date;
     private String modeOfPayment;
     @ManyToOne
-    private Customer custId;
+    private User uid;
 }

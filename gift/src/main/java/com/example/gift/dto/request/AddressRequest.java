@@ -1,6 +1,4 @@
-package com.example.gift.dto.response;
-
-import com.example.gift.enumerated.Role;
+package com.example.gift.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,8 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class LoginResponse {
-    private String accessToken;
+public class AddressRequest {
     private long id;
-    private Role role;
+    private String address;
 }

@@ -1,7 +1,6 @@
 package com.example.gift.model;
 
 import static jakarta.persistence.EnumType.STRING;
-import static jakarta.persistence.GenerationType.UUID;
 
 import java.util.Collection;
 import java.util.List;
@@ -14,6 +13,7 @@ import com.example.gift.enumerated.Role;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -30,11 +30,13 @@ import lombok.NoArgsConstructor;
 @Table(name = "_user")
 public class User implements UserDetails{
     @Id
-    @GeneratedValue(strategy = UUID)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     private String name;
     private String email;
     private String password;
+    private String address;
+    private String phoneNo;
 
     @Enumerated(STRING)
     @Builder.Default
