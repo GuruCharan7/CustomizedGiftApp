@@ -1,0 +1,9 @@
+.dashboard-container {
+    position: absolute;
+    top: 16%;
+    bottom: 14%;
+    left: 20%;
+    height: 70%;
+    width: 80%;
+    overflow: hidden;
+}
